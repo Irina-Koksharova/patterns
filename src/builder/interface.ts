@@ -1,18 +1,4 @@
-enum PRODUCT {
-  DOOR = 'door',
-}
-
-interface IProduct {
-  product: string;
-}
-
-interface IDoor extends IProduct {
-  type: string;
-  width?: number;
-  height?: number;
-  weight?: number;
-  color?: string;
-}
+import { IDoor } from '../interface';
 
 interface IDoorBuilder extends IDoor {
   setWidth: (width: number) => Partial<IDoorBuilder>;
@@ -22,4 +8,4 @@ interface IDoorBuilder extends IDoor {
   getDoor: () => IDoorBuilder;
 }
 
-export { PRODUCT, IDoorBuilder };
+export { IDoorBuilder };

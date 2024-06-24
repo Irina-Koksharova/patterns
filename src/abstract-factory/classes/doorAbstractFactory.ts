@@ -1,5 +1,6 @@
 import WoodenDoorFactory from './woodenDoor';
 import IronDoorFactory from './ironDoor';
+import { IDoorAbstractFactory } from '../interface';
 
 /**
  * https://blog.eney.solutions/coding/javascript/javascript-pattern-abstract-factory.html
@@ -8,8 +9,10 @@ import IronDoorFactory from './ironDoor';
  * over the Factory pattern.
  */
 
-class DoorAbstractFactory {
-  constructor(type) {
+class DoorAbstractFactory implements IDoorAbstractFactory {
+  type: string;
+
+  constructor(type: string) {
     this.type = type;
   }
 
