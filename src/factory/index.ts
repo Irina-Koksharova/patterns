@@ -1,4 +1,4 @@
-import DoorFactory from './classes/doorFactory.js';
+import DoorFactory from './classes/doorFactory';
 
 export const woodenDoor = new DoorFactory(
   'wooden',

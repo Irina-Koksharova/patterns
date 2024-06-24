@@ -1,18 +1,19 @@
-import { PRODUCT, IDoorBuilder } from '../interface';
+import { PRODUCT } from '../../interface';
+import { IDoorBuilder } from '../interface';
 
 /**
  * https://refactoring.guru/design-patterns/builder
  *
- * This iis useful when creating complex composite trees because we can program its construction steps to work recursively.
+ * This is useful when creating complex composite trees because we can program its construction steps to work recursively.
  */
 
 class DoorBuilder implements IDoorBuilder {
-  product: PRODUCT.DOOR;
-  type: string;
-  width?: number;
-  height?: number;
-  weight?: number;
-  color?: string;
+  public product: PRODUCT.DOOR;
+  public type: string;
+  public width?: number;
+  public height?: number;
+  public weight?: number;
+  public color?: string;
 
   constructor(
     type: string,
@@ -29,27 +30,27 @@ class DoorBuilder implements IDoorBuilder {
     this.color = color;
   }
 
-  setWidth(width: number) {
+  public setWidth(width: number) {
     this.width = width;
     return this;
   }
 
-  setHeight(height: number) {
+  public setHeight(height: number) {
     this.height = height;
     return this;
   }
 
-  setWeight(weight: number) {
+  public setWeight(weight: number) {
     this.weight = weight;
     return this;
   }
 
-  setColor(color: string) {
+  public setColor(color: string) {
     this.color = color;
     return this;
   }
 
-  getDoor() {
+  public getDoor() {
     console.log("\x1b[1;32mPattern 'Builder' \x1b[0m");
     console.log(
       `New ${this.type} door is constructed! \nParameters: \nwidth - ${this.width}, \nheight - ${this.height}, \nweight - ${this.weight}, \ncolor - ${this.color}`

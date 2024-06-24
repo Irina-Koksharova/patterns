@@ -1,3 +1,4 @@
-import './abstract-factory/index.js';
-import './factory/index.js';
+import './abstract-factory/index';
+import './factory/index';
 import './builder/index';
+import './prototype/index';

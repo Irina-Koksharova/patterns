@@ -1,12 +1,28 @@
+import { PRODUCT } from '../../interface';
+import { IDoorFactory } from '../interface';
+
 /**
  * https://blog.eney.solutions/coding/javascript/js-patterny-factory.html
  *
  * This is useful when we need to create objects of the same class with different input data.
  */
 
-class DoorFactory {
-  constructor(type, width, height, weight, color) {
-    this.product = 'door';
+class DoorFactory implements IDoorFactory {
+  product: string;
+  type: string;
+  width?: number;
+  height?: number;
+  weight?: number;
+  color?: string;
+
+  constructor(
+    type: string,
+    width?: number,
+    height?: number,
+    weight?: number,
+    color?: string
+  ) {
+    this.product = PRODUCT.DOOR;
     this.type = type;
     this.width = width;
     this.height = height;
